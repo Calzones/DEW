@@ -1,0 +1,43 @@
+h3{
+	margin: 0;
+}
+
+body{
+	margin: 0 8px;
+	background-color:#C97CED	; 
+	color:#C9ED58;
+	
+}
+
+a:link {text-decoration:none; color: #99CC66;}
+a:visited {text-decoration:none; color:#99CC66;}
+a:hover {text-decoration:none; color:#99FF00;}
+/*a:active {text-decoration:none; color:#99FF00; background:#EEEEEE;}*/
+
+header{
+	margin: 0px;
+	padding: 5px 0 0 5px;
+	background-color: #123456;
+	height: 75px;
+}
+
+section{
+	padding: 10px;
+	background-color: #123456 ; 
+	width: 50%;
+	margin-top: 50px;
+	margin-left: 125px;
+	
+}
+
+main{ 
+	margin-bottom: 45%;
+}
+
+button{
+	margin-top: 10px;
+}
+
+footer{
+	float: right;
+}
