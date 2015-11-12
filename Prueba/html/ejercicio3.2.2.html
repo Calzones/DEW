@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../src/css/stilo.css"/>
+		<script type="text/javascript" src="../src/javaScript/ejercicio3.2.2.js"></script>
+	</head>
+	<body class="fondoPagina" onload="escuender(); escuender2ElRetorno();">
+		<header>
+			<h3>Ejercicio 2</h3>
+		</header>
+			<main>
+				<section>
+					<h1>El juego en si mismo:</h1>
+					<div >
+						<input type="radio" name="valor" value="0" onclick="blackMagic()">Piedra<br>
+						<input type="radio" name="valor" value="2" onclick="blackMagic()">Papel<br>
+						<input type="radio" name="valor" value="4" onclick="blackMagic()">Tijeras<br>
+						<input type="radio" name="valor" value="3" onclick="blackMagic()">Lagarto<br>
+						<input type="radio" name="valor" value="1" onclick="blackMagic()">Spock
+						<br><br><input type="submit" value="Jugar!!!!!!!!!" onclick="juegar();" autofocus>
+					</div>
+					<div style="margin-top:-100px; margin-left:150px;">	
+						<img id='lagarto1' src='../src/img/lagarto.png' style="width:100px; height:100px;">
+						<img id='tijeras1' src='../src/img/tijeras.png' style="width:100px; height:100px;">
+						<img id='spock1' src='../src/img/spock.png' style="width:100px; height:100px;">
+						<img id='papel1' src='../src/img/papel.png' style="width:100px; height:100px;">
+						<img id='piedra1' src='../src/img/piedra.png' style="width:100px; height:100px;">
+					</div>
+					<div id="div" style="margin-top:-130px; margin-left:300px; width:100px; height:100px;">					
+						<img id='lagarto' src='../src/img/lagarto.png' style="width:100px; height:100px;">
+						<img id='tijeras' src='../src/img/tijeras.png' style="width:100px; height:100px;">
+						<img id='spock' src='../src/img/spock.png' style="width:100px; height:100px;">
+						<img id='papel' src='../src/img/papel.png' style="width:100px; height:100px;">
+						<img id='piedra' src='../src/img/piedra.png' style="width:100px; height:100px;">
+					</div><br><br>
+					<div style="text-align:center;">
+					<input type="text" id="texto" style="width:300px;">
+						<h1>Da ruls:</h1>
+						<img src="../src/img/piedraPapelTijeraLagartoSpock.jpg";>
+					</div>
+				</section>
+				<form action="unidad3.html">
+					<button><-</button>
+				</form>
+			</main>
+		<footer>
+			Hacido por min :D
+		</footer>
+	</body>
+</html>

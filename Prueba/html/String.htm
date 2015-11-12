@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Muchas cosas</title>
+	</head>
+	<body>
+		<script language="javascript">
+			//var strFrase=new String("Puerto de G.C.");
+			var strFrase = "Puerto de G.C.";
+			var strFrase2 = "Código ASCII/Unicode";
+
+			document.write('lenght= '+strFrase.length+'<br>');
+			document.write('anchor(\"linea2\")= '+strFrase.anchor("linea2")+'<br>');
+			document.write('big()= '+strFrase.big()+'<br>');
+			document.write('blink()= '+strFrase.blink()+'<br>');
+			document.write('charAt(5)= '+strFrase.charAt(5)+'<br>');
+			document.write('charCodeAt(6)= '+strFrase.charCodeAt(6)+'<br>');
+			document.write('fixed()= '+strFrase.fixed()+'<br>');
+			document.write('fontcolor(\"#FF0000\")= '+strFrase.fontcolor("#FF0000")+'<br>');
+			document.write('fontsize(12)= '+strFrase.fontsize(12)+'<br>');
+			document.write('indexOf("G.C.",3)= '+strFrase.indexOf("G.C.",3)+'<br>');
+			document.write('italics()= '+strFrase.italics()+'<br>');
+			document.write('lastIndexOf("G.C.")= '+strFrase.lastIndexOf("G.C.")+'<br>');
+			document.write('lastIndexOf("G.C.",5)= '+strFrase.lastIndexOf("G.C.",5)+'<br>');
+			for (i = 0; i < 35; i++){
+				document.write('<br>');
+			}			
+			document.write('link(\"#linea2\")= '+strFrase.link("#linea2")+'<br>');
+			document.write('link(\"ascii.htm\")= '+strFrase2.link("ascii.htm")+'<br>');
+			document.write('replace(\"e\",\"o\")= '+strFrase.replace("e","o")+'<br>');
+			document.write('replace(\"/e/g\",\"o\")= '+strFrase.replace(/e/g,"o")+'<br>');
+			document.write('small()= '+strFrase.small()+'<br>');
+			document.write('a es un Array   a=split(\" \")= '+'<br>');
+			var a = new Array();
+			a = strFrase.split(" ");
+			var i;
+			for (i = 0; i < a.length; i ++){
+				document.write('a[' + i + ']= ' + a[i] + '<br>');
+			}
+			document.write('strike()= '+strFrase.strike()+'<br>');
+			document.write('substring(2,5)= '+strFrase.substring(2,5)+'<br>');
+			document.write('substr(2,5)= '+strFrase.substr(2,5)+'<br>');
+			document.write('sub()= '+strFrase.sub()+'<br>');
+			document.write('sup()= '+strFrase.sup()+'<br>');
+			document.write('toLowerCase()= '+strFrase.toLowerCase()+'<br>');
+			document.write('toUpperCase()= '+strFrase.toUpperCase()+'<br>');
+		</script>
+	</body>
+</html>
