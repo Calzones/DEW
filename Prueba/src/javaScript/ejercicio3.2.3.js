@@ -54,9 +54,6 @@ function suma(){
 	}
 }
 
-function informacion(nombre, localidad = "Las Palmas de G.C.", valor = 100){
-	document.getElementById("informacion").value = nombre + " " + localidad + " " + valor;
-}
 
 function factorialRecursivo(){
 	var numero = document.getElementById("factorialRecursivo").value;
