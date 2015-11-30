@@ -18,7 +18,7 @@ function generar() {
 
 function comprobarDiferentes(vector, i, numero) {
 
-	for (j = 0; j < i; j++) {
+	for (j = 0; j < i; j ++){
 		if (vector[j] == numero) {
 			return true;
 		}
