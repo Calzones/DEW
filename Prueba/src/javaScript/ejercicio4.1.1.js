@@ -1,16 +1,11 @@
-//function validar(){
-//	//v1 ^[\w\-\.]+@[\w\-]+\.[A-z]+
-//	//v2 ^[\w\-\.]+@[\w\-]+(\.[A-z]+)+
-//	//v3 ^(?!.*\.{2})(?=[^\.])[\w\-\.]+@[\w\-]+(\.[A-z]+)+
-//	alert (/^(?!.*\.{2})(?=[^\.])[\w\-\.]+@[\w\-]+(\.[A-z]+)+/.test(document.getElementById("email").value));
-//}
-
-function jugar (){
+function jugar(){
 	var trela = document.getElementById("aAdivinar").value;
 	var arraygo = trela.split("");
 	var numero = Math.floor((Math.random()*trela.length));
 	var pabrala = arraygo[numero];
 	var trelaNueva = "";
+	var alberto = 0;
+	
 	for(i = 0 ; i < arraygo.length; i ++){
 		if(arraygo[i] != pabrala){
 			arraygo[i] = "_";
@@ -19,6 +14,14 @@ function jugar (){
 	}
 	document.getElementById("enAdivine").value = trelaNueva;
 	
-	//document.getElementById("enAdivine").value = arraygo.toString();
-	//alert(palabra);
+	var x = document.getElementById("divinar").value;
+	
+	if(trela.search(x) != -1){
+		
+	}else{
+		alberto ++;
+	}
+	alert(palabra);
+	cuentador = 1;
+	document.getElementById("aAdivinar").onfocusout = function(){};
 }
