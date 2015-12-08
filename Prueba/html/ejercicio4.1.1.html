@@ -5,12 +5,19 @@
 		<link rel="stylesheet" href="../src/css/stilo.css"/>
 		<script type="text/javascript" src="../src/javaScript/ejercicio4.1.1.js"></script>
 	</head>
-	<body class="fondoPagina">
+	<body class="fondoPagina"">
 		<header>
 			<h3>Ejercicio 1</h3>
 		</header>
 			<main>
 				<section>
+					Introduzca una palabra<br>
+					<input type="password" id="aAdivinar" onfocusout="jugar();"/><br><br>
+					<input type="text" id="enAdivine" readonly/><br><br>
+					<input type="hidden" id="LaPuraMagiaNoMasBuey" value=""/>
+					<script></script>
+					Intenta adivinarla <input type="text" id="divinar" maxlength="1" onkeypress="comprobar();"/><br><br>
+					<button onclick="reiniciar();">Reiniciar</button>
 				</section>
 				<form action="unidad4.html">
 					<button><-</button>
