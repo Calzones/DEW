@@ -2,19 +2,7 @@
 	<head>
 		<title>Validaciones numéricas</title>
 		<script>
-			function es_minuscula(car) {
-				var MINUSCULAS = "abcdefghijklmnnopqrstuvwxyzáéíóúü";
-				return MINUSCULAS.indexOf(car) >= 0;
-			}
-		
-			function es_mayuscula(car) {
-				var MAYUSCULAS = "ABCDEFGHIJKLMNNOPQRSTUVWXYZÁÉÍÓÚÜ";
-				return MAYUSCULAS.indexOf(car) >= 0;
-			}
-		
-			function es_letra(car) {
-				return es_minuscula(car) || es_mayuscula(car);
-			}
+			var error = new crear_error();
 		
 			function es_numero(car) {
 				var NUMEROS = "0123456789";
@@ -38,8 +26,6 @@
 				return false;
 			}
 		
-			var error = new crear_error();
-		
 			function comprobar_natural(contenido, sin_ceros_izquierda, error) {
 				if (contenido.length == 0) {
 					return error.rellenar("Campo vacio no contiene ningun valor", 1);
@@ -55,7 +41,64 @@
 				}
 				return true;
 			}
-			function validar_txtNumero1(elemento) {
+			
+			function comprobar_entero(contenido, sin_ceros_izquierda, error) {
+				
+				if (contenido.length == 0){
+					return error.rellenar("Campo vacio no contiene ningun valor", 1);
+				}
+				for (var i = 0; i < contenido.length; i++){
+					if (!es_numero(contenido.charAt(i))){
+						if (!(i == 0 && es_signo(contenido.charAt(0)))){
+							return error.rellenar("Carácter ilegal en un número", i + 1);
+						}
+					}
+				}
+				if (es_signo(contenido.charAt(0)) && contenido.length == 1){
+					return error.rellenar("Solo tiene un signo, inserte un número", 2);
+				}
+				if (sin_ceros_izquierda	&& (contenido.charAt(0) == '0' && contenido.length > 1)
+						|| (es_signo(contenido.charAt(0)) && contenido.charAt(1) == '0' && contenido.length > 2)){
+					return error.rellenar("Número con cero ó ceros a la izquierda", 2);
+				}
+				return true;
+			}
+		
+			function comprobar_real(contenido, sin_ceros_izquierda, error) {
+				
+				var punto_decimal = ".";
+				if (contenido.length == 0){
+					return error.rellenar("Campo vacio no contiene ningun valor", 1);
+				}
+				posicion_punto = contenido.indexOf(punto_decimal);
+				if (posicion_punto < 0){
+					return error.rellenar("Número real sin punto decimal", contenido.length + 1);
+				}
+				var parte_entera = contenido.substring(0, posicion_punto);
+				var parte_decimal = contenido.substring(posicion_punto + 1,	contenido.length);
+				if (parte_entera.length < 1){
+					return error.rellenar("Falta la parte entera del número", posicion_punto);
+				}
+				if (parte_decimal.length < 1){
+					return error.rellenar("Falta la parte decimal del número", posicion_punto + 1);
+				}
+				if (!comprobar_entero(parte_entera, true, error)){
+					return false;
+				}
+				if (!comprobar_natural(parte_decimal, false, error)){
+					return false;
+				}
+				return true;
+			}
+		
+			function comprobar_real2(contenido, sin_ceros_izquierda, error) {
+				if (!comprobar_entero(contenido, sin_ceros_izquierda, error) && !comprobar_real(contenido, sin_ceros_izquierda, error)){
+					return false;
+				}
+				return true;
+			}
+			
+			function validar1(elemento) {
 				try {
 					if (!comprobar_natural(elemento, true, error))
 						throw new Error("ERROR: " + error.mensaje + " en la posición " + error.posicion);
@@ -65,87 +108,50 @@
 					alert(ex.message);
 				}
 			}
-
-			function comprobar_entero(contenido, sin_ceros_izquierda, error) {
-				if (contenido.length == 0)
-					return error.rellenar("Campo vacio no contiene ningun valor", 1);
-				for (var i = 0; i < contenido.length; i++)
-					if (!es_numero(contenido.charAt(i)))
-						if (!(i == 0 && es_signo(contenido.charAt(0))))
-							return error
-									.rellenar("Carácter ilegal en un número", i + 1);
-				if (es_signo(contenido.charAt(0)) && contenido.length == 1)
-					return error.rellenar("Solo tiene un signo, inserte un número", 2);
-				if (sin_ceros_izquierda	&& (contenido.charAt(0) == '0' && contenido.length > 1)
-						|| (es_signo(contenido.charAt(0)) && contenido.charAt(1) == '0' && contenido.length > 2))
-					return error.rellenar("Número con cero ó ceros a la izquierda", 2);
-				return true;
-			}
-		
-			function comprobar_real(contenido, sin_ceros_izquierda, error) {
-				var punto_decimal = ".";
-				if (contenido.length == 0)
-					return error.rellenar("Campo vacio no contiene ningun valor", 1);
-				posicion_punto = contenido.indexOf(punto_decimal);
-				if (posicion_punto < 0)
-					return error.rellenar("Número real sin punto decimal", contenido.length + 1);
-				var parte_entera = contenido.substring(0, posicion_punto);
-				var parte_decimal = contenido.substring(posicion_punto + 1,	contenido.length);
-				if (parte_entera.length < 1)
-					return error.rellenar("Falta la parte entera del número", posicion_punto);
-				if (parte_decimal.length < 1)
-					return error.rellenar("Falta la parte decimal del número", posicion_punto + 1);
-				if (!comprobar_entero(parte_entera, true, error))
-					return false;
-				if (!comprobar_natural(parte_decimal, false, error))
-					return false;
-				return true;
-			}
-		
-			function comprobar_real2(contenido, sin_ceros_izquierda, error) {
-				if (!comprobar_entero(contenido, sin_ceros_izquierda, error) && !comprobar_real(contenido, sin_ceros_izquierda, error))
-					return false;
-				return true;
-			}
-			function validar_txtNumero2(elemento) {
+			
+			function validar2(elemento) {
 				try {
-					if (!comprobar_natural(elemento, false, error))
+					if (!comprobar_natural(elemento, false, error)){
 						throw new Error("ERROR: " + error.mensaje + " en la posición " + error.posicion);
-					else
+					}else{
 						alert("Correcto");
+					}
 				} catch (ex) {
 					alert(ex.message);
 				}
 			}
 		
-			function validar_txtNumero3(elemento) {
+			function validar3(elemento) {
 				try {
-					if (!comprobar_entero(elemento, true, error))
+					if (!comprobar_entero(elemento, true, error)){
 						throw new Error("ERROR: " + error.mensaje + " en la posición " + error.posicion);
-					else
+					}else{
 						alert("Correcto");
+					}
 				} catch (ex) {
 					alert(ex.message);
 				}
 			}
 		
-			function validar_txtNumero4(elemento) {
+			function validar4(elemento) {
 				try {
-					if (!comprobar_real(elemento, true, error))
+					if (!comprobar_real(elemento, true, error)){
 						throw new Error("ERROR: " + error.mensaje + " en la posición " + error.posicion);
-					else
+					}else{
 						alert("Correcto");
+					}
 				} catch (ex) {
 					alert(ex.message);
 				}
 			}
 		
-			function validar_txtNumero5(elemento) {
+			function validar5(elemento) {
 				try {
-					if (!comprobar_real2(elemento, true, error))
+					if (!comprobar_real2(elemento, true, error)){
 						throw new Error("ERROR: " + error.mensaje + " en la posición " + error.posicion);
-					else
+					}else{
 						alert("Correcto");
+					}
 				} catch (ex) {
 					alert(ex.message);
 				}
@@ -155,26 +161,11 @@
 	<body>
 		<h2>Prueba de validaciones numéricas</h2>
 		Introduzca un número
-		<input type="text" name="txtNumero" size="20">
-		<br>
-		<input type="button"
-			value="¿es un número natural sin ceros a la izquierda?"
-			onClick="validar_txtNumero1(txtNumero.value)">
-		<br>
-		<input type="button"
-			value="¿es un número natural aunque tenga ceros a la izquierda?"
-			onClick="validar_txtNumero2(txtNumero.value)">
-		<br>
-		<input type="button"
-			value="¿es un número entero sin ceros a la izquierda?"
-			onClick="validar_txtNumero3(txtNumero.value)">
-		<br>
-		<input type="button"
-			value="¿es un número real, sin ceros a la izquierda?"
-			onClick="validar_txtNumero4(txtNumero.value)">
-		<br>
-		<input type="button"
-			value="¿es un número real, sin ceros a la izquierda, incluyendo enteros?"
-			onClick="validar_txtNumero5(txtNumero.value)">
+		<input type="text" id="txt" name="txtNumero" size="20"><br>
+		<input type="button" value="¿es un número natural sin ceros a la izquierda?" onClick="validar1(document.getElementById('txt').value)"><br>
+		<input type="button" value="¿es un número natural aunque tenga ceros a la izquierda?" onClick="validar2(document.getElementById('txt').value)"><br>
+		<input type="button" value="¿es un número entero sin ceros a la izquierda?"	onClick="validar3(document.getElementById('txt').value)"><br>
+		<input type="button" value="¿es un número real, sin ceros a la izquierda?" onClick="validar4(document.getElementById('txt').value)"><br>
+		<input type="button" value="¿es un número real, sin ceros a la izquierda, incluyendo enteros?" onClick="validar5(document.getElementById('txt').value)">
 	</body>
 </html>
