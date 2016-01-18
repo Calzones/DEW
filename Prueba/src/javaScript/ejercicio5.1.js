@@ -1,11 +1,13 @@
+var caca;
 
-function conparar(a,b){
-	if(ignoreCase){		
-		a = a.toLowerCase();
-		b = b.toLowerCase();
-	}if(isNaN(a) || isNaN(a)){
-		return (a == b ? 0:(a < b ? -1 : 1));
+function añadir() {
+	if(/^(?!.*\.{2})(?=[^\.])[\w\-\.]+@[\w\-]+(\.[A-z]+)+/.test(document.getElementById("email").value)){
+		return caca = [document.getElementById("apellidos").value,document.getElementById("nombre").value,document.getElementById("email").value];
 	}else{
-		return a - b;
+		alert("Correo no válido");
 	}
+}
+
+function visualizar() {
+	alert("Nombre: " + caca[1] + "\nApellidos: " + caca[0] + "\nCorreo electronico: " + caca[2]);
 }

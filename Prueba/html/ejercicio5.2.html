@@ -5,21 +5,26 @@
 		<link rel="stylesheet" href="../src/css/stilo.css"/>
 		<script type="text/javascript" src="../src/javaScript/ejercicio5.2.js"></script>
 	</head>
-	<body class="fondoPagina" onload="hangman();">
+	<body class="fondoPagina">
 		<header>
 			<h3>Ejercicio 2</h3>
 		</header>
 			<main>
 				<section>
 					Te valido lo que quieras<br>
-					<input type="text" id="email""/><h3 id="texto"></h3><br>
-					<button onclick="validar();">Validar</button><br><br>
+					Nombre: <input type="text" id="nombre"/> Nº de expediente: <input type="text" id="numExp"/><br>
+					Apellido 1: <input type="text" id="apellido1"/> Apellido 2: <input type="text" id="apellido2"/><br>
+					Edad: <input type="number" id="edad"/> Fecha de permiso: <input type="number" id="fechaPermiso"/><br>
+					Matricula: <input type="text" id="matricula"/> Importe: <input type="text" id="importe"/><br>
+					Nº tarjeta: <input type="number" id="numTarjeta"/> Tipo de tarjeta: <select id="select"><option>Genérica</option><option>American Express</option><option>Diner’s Club</option><option>Master Card</option><option>Visa</option></select><br>
+					Mes de expiracion: <input type="number" id="mesExp"/> Año de expiracion: <input type="number" id="añoExp"/><br>
+					<button onclick="validar();"> Validar formularios</button><br><br>
 				</section>
 				<form action="unidad5.html">
 					<button><-</button>
 				</form>
 			</main>
-		<footer>
+		<footer>¡
 			Hacido por min :D
 		</footer>
 	</body>

@@ -4,20 +4,21 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="../src/css/stilo.css"/>
 		<script type="text/javascript" src="../src/javaScript/ejercicio5.1.js"></script>
+		<script></script>
 	</head>
-	<body class="fondoPagina" onload="hangman();">
+	<body class="fondoPagina" onload="main();">
 		<header>
 			<h3>Ejercicio 1</h3>
 		</header>
 			<main>
 				<section>
 					<form action="">
-						Apellidos:<input type="text" id="apellidos""/><br>
-						Nombre:<input type="text" id="apellidos""/><br>
+						Apellidos:<input type="text" id="apellidos"/><br>
+						Nombre:<input type="text" id="nombre"/><br>
 						Sexo:
 					    <input type="radio" name="sexo" value="hembra">Hembra
 					    <input type="radio" name="sexo" value="macho">Macho<br>
-					    Correo electronico<input type="email" name="coreo"><br>
+					    Correo electronico<input type="email" name="coreo" id="email"><br>
 					    ¿Como ha llegado hasta aqui?
 					    <select>
 						    <option>Al azar. </option>
@@ -29,7 +30,10 @@
 					    <input type="checkbox" id="checkbox1" name="informacion" value="1">Material audiovisual.<br>
 					    <input type="checkbox" id="checkbox2" name="informacion" value="2">Textos electronicos.<br>
 					    <input type="checkbox" id="checkbox3" name="informacion" value="3">Libros de texto.<br>
-					    <button onclick="validar();">Validar</button><br><br>
+					    <textarea></textarea><br>
+					    <button onclick="visualizar(añadir());">Vizualizar datos</button><br><br>
+					    <button onclick="añadir();">Añadir</button><br><br>
+					    <button onclick="eliminar();">Eliminar</button><br><br>
 					    
 					</form>
 				</section>
