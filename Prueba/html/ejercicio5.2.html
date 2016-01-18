@@ -12,10 +12,10 @@
 			<main>
 				<section>
 					Te valido lo que quieras<br>
-					Nombre: <input type="text" id="nombre"/> Nº de expediente: <input type="text" id="numExp"/><br>
-					Apellido 1: <input type="text" id="apellido1"/> Apellido 2: <input type="text" id="apellido2"/><br>
-					Edad: <input type="number" id="edad"/> Fecha de permiso: <input type="number" id="fechaPermiso"/><br>
-					Matricula: <input type="text" id="matricula"/> Importe: <input type="text" id="importe"/><br>
+					Nombre: <input type="text" id="nombre" onfocusout="noNum(this.id);"/> Nº de expediente: <input type="number" id="numExp" onfocusout="numExp(this.id);vagia(this.id);"/><br>
+					Apellido 1: <input type="text" id="apellido1" onfocusout="noNum(this.id);"/> Apellido 2: <input type="text" id="apellido2" onfocusout="noNum(this.id);"/><br>
+					Edad: <input type="number" id="edad" onfocusout="edad(this.id);vagia(this.id);"/> Fecha de permiso: <input type="text" id="fechaPermiso" onfocusout="fecha(this.id);"/><br>
+					Matricula: <input type="text" id="matricula"/> Importe: <input type="number" id="importe"/><br>
 					Nº tarjeta: <input type="number" id="numTarjeta"/> Tipo de tarjeta: <select id="select"><option>Genérica</option><option>American Express</option><option>Diner’s Club</option><option>Master Card</option><option>Visa</option></select><br>
 					Mes de expiracion: <input type="number" id="mesExp"/> Año de expiracion: <input type="number" id="añoExp"/><br>
 					<button onclick="validar();"> Validar formularios</button><br><br>
@@ -24,7 +24,7 @@
 					<button><-</button>
 				</form>
 			</main>
-		<footer>¡
+		<footer>
 			Hacido por min :D
 		</footer>
 	</body>
