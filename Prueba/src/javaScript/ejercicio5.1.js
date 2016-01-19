@@ -3,8 +3,8 @@ function añadir() {
 			.getElementById("email").value)) {
 		document.getElementById("textarea").value = document
 				.getElementById("apellidos").value
-				+ document.getElementById("nombre").value
-				+ document.getElementById("email").value;
+				+ "\n" + document.getElementById("nombre").value
+				+ "\n" + document.getElementById("email").value;
 	} else {
 		alert("Correo no válido");
 	}
@@ -28,8 +28,8 @@ function visualizar() {
 			+ "\nApellidos: " + document.getElementById("apellidos").value
 			+ "\nCorreo electronico: " + document.getElementById("email").value
 			+ "\nSexo: " + resultado
-			+ "\nOrigen: " + resultado1
-			+ "\nIntereses: " + document.getElementById("select").value);
+			+ "\nIntereses: " + resultado1
+			+ "\nOrigen: " + document.getElementById("select").value);
 }
 function eliminar() {
 	document.getElementById("textarea").value = "";
