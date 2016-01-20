@@ -42,13 +42,13 @@ function edad(elemento) {
 function fecha(elemento){
 	var cadenaEntera = document.getElementById(elemento).value; 
 	var separada = cadenaEntera.split("/");
-	var buscar = cadenaEntera.search("/");
+	var alberto = buescar(cadenaEntera, "/");
 	var dia = separada[0];
 	var mes = separada[1];
 	var año = separada[2];
-	if(buscar == 2){
+	if(alberto == 2){
 		if(dia.length == 2 && mes.length == 2 && año.length == 4){
-			alert(dia.search("0"));
+			dia(dia);
 		}else{
 			alert("Formato de fecha erroneo (dd/mm/aaaa)");
 		}
@@ -57,13 +57,21 @@ function fecha(elemento){
 	}
 }
 function dia(dia){
-	alert(dia.search("0"));
-	if(dia.search("0") > 0){
+	if(buescar(dia, "0") > 0){
 		alert(dia.split("0")[1]);
 	}
 }
 function mes(){
 	
+}
+function buescar(cadena, elemento){
+	var alberto = 0;
+	for(i = 0; i < cadena.length; i++){
+		if(cadena[i] == elemento ){
+			alberto ++;
+		}
+	}
+	return alberto;
 }
 
 
