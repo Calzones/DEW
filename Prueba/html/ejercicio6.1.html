@@ -2,30 +2,30 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="../src/css/stilo.css"/>
+		<link rel="stylesheet" href="../src/css/stilo.css" />
 		<script type="text/javascript" src="../src/javaScript/ejercicio5.2.js"></script>
 	</head>
 	<body class="fondoPagina">
 		<header>
-			<h3>Ejercicio 2</h3>
+			<h3>Ejercicio 1</h3>
 		</header>
-			<main>
-				<section>
-					Te valido lo que quieras<br>
-					Nombre: <input type="text" id="nombre" onfocusout="noNum(this.id);"/> Nº de expediente: <input type="number" id="numExp" onfocusout="numExp(this.id);" min="340000000000" max="349999999999"/><br>
-					Apellido 1: <input type="text" id="apellido1" onfocusout="noNum(this.id);"/> Apellido 2: <input type="text" id="apellido2" onfocusout="noNum(this.id);"/><br>
-					Edad: <input type="number" id="edad" onfocusout="edad(this.id);" min="18" max="120"/> Fecha de permiso: <input type="text" id="fechaPermiso" onfocusout="fecha(this.id);"/><br>
-					Matricula: <input type="text" id="matricula" onfocusout="matricula(this.id);"/> Importe: <input type="number" id="importe"/><br>
-					Nº tarjeta: <input type="number" id="numTarjeta"/> Tipo de tarjeta: <select id="select"><option>Genérica</option><option>American Express</option><option>Diner’s Club</option><option>Master Card</option><option>Visa</option></select><br>
-					Mes de expiracion: <input type="number" id="mesExp" onfocusout="mesExp(this.id);" min="1" max="12"/> Año de expiracion: <input type="number" id="añoExp" onfocusout="añoExp(this.id);" min="2001" max="2100"/><br>
-					<button onclick="validar();"> Validar formularios</button><br><br>
-				</section>
-				<form action="unidad5.html">
-					<button><-</button>
-				</form>
-			</main>
-		<footer>
-			Hacido por min :D
-		</footer>
+		<main>
+		<section>
+			<form action="">
+			Servicios del videoClub: 
+				<select id=select onmouseout="primerSelect();">
+					<option>Videos</option>
+					<option>Discos</option>
+					<option>Juegos</option>
+				</select><br>
+				<div id="div"></div>
+				
+			</form>
+		</section>
+		<form action="unidad5.html">
+			<button><-</button>
+		</form>
+		</main>
+		<footer> Hacido por min :D </footer>
 	</body>
 </html>
