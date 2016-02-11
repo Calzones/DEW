@@ -19,12 +19,5 @@ function reiniciar(){
 	document.getElementById("formulario").reset();
 }
 function mostrar(){
-	
-	var div1 = document.getElementById("div1").name;
-	var div2 = document.getElementById("div2").name;
-	var div3 = document.getElementById("div3").name;
-	
-	alert("Nombre div 1: " + div1 + "\n" +
-		  "Nombre div 2: " + div2 + "\n" +
-		  "Nombre div 3: " + div3);
+	alert("Nombre div 1:  div1 \n Nombre div 2:  div2 \n Nombre div 3:  div3 ");
 }

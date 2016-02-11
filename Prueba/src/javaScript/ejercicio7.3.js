@@ -1,5 +1,5 @@
 function aumentar(ruta){
-	window.open("ejercicio7.3.1.html", ruta, "width=400, heigth=400");
+	window.open("ejercicio7.3.1.html", ruta, "rezisable=yes", "width=400, heigth=400");
 }
 function yaTuSabeh(){
 	var ruta = window.name;

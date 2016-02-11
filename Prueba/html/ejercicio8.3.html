@@ -5,14 +5,17 @@
 		<link rel="stylesheet" href="../src/css/stilo.css"/>
 		<script type="text/javascript" src="../src/javaScript/ejercicio8.3.js"></script>
 	</head>
-	<body class="fondoPagina">
+	<body class="fondoPagina" onload="primero();">
 		<header>
 			<h3>Ejercicio 3</h3>
 		</header>
 			<main>
 				<section>
 					<div>
-						<button id="b1" onclick="mainStreet();">P1</button>
+						<h3 id="aqui"></h3>
+						<button onclick="crear();">Crear Galleta</button>
+						<button onclick="mostrar();">Mostrar Galleta</button>
+						<button onclick="eliminar('rica');">Eliminar Cookie</button>
 					</div>
 				</section>
 				<form action="unidad8.html">
