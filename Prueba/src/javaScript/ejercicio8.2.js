@@ -1,17 +1,18 @@
-function teclitaArriba(elemento){
-	if(siNoRojo(elemento))
-		document.getElementById(elemento).style.backgroundColor = 'skyblue';
+function cambiar(){
+	
+	document.getElementById("div1").innerHTML = "<img src='../src/img/imagen1.2.jpg' " +
+			"width=300 height=200 onmouseout='descambiar();' onclick='cerriear();'>";
+	document.getElementById("div2").innerHTML = "<img src='../src/img/imagen2.gif' " +
+	"width=300 height=200 >";
 }
-function teclitaAbajo(elemento){
-	if(siNoRojo(elemento))
-		document.getElementById(elemento).style.backgroundColor = 'orchid';
+function descambiar(){
+	
+	document.getElementById("div1").innerHTML = "<img src='../src/img/imagen1.jpg' " +
+			"width=300 height=200 onmouseover='cambiar();'>";
+	document.getElementById("div2").innerHTML = "<img src='../src/img/imagen2.jpg' " +
+			"width=300 height=200 >";
 }
-function dobletecliado(elemento, elemento2){
-	document.getElementById(elemento).style.backgroundColor = 'red'; 
-	document.getElementById(elemento2).style.backgroundColor = 'coral';
-	document.getElementById("textarea").innerHTML = document.getElementById(elemento2).innerHTML;
-}
-function siNoRojo(elemento){
-	if(document.getElementById(elemento).style.backgroundColor != 'red')
-		return true;
+
+function cerriear(){
+	window.close();
 }

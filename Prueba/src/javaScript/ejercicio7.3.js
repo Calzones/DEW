@@ -1,17 +1,7 @@
-function teclitaArriba(elemento){
-	if(siNoRojo(elemento))
-		document.getElementById(elemento).style.backgroundColor = 'skyblue';
+function aumentar(ruta){
+	window.open("ejercicio7.3.1.html", ruta, "width=400, heigth=400");
 }
-function teclitaAbajo(elemento){
-	if(siNoRojo(elemento))
-		document.getElementById(elemento).style.backgroundColor = 'orchid';
-}
-function dobletecliado(elemento, elemento2){
-	document.getElementById(elemento).style.backgroundColor = 'red'; 
-	document.getElementById(elemento2).style.backgroundColor = 'coral';
-	document.getElementById("textarea").innerHTML = document.getElementById(elemento2).innerHTML;
-}
-function siNoRojo(elemento){
-	if(document.getElementById(elemento).style.backgroundColor != 'red')
-		return true;
+function yaTuSabeh(){
+	var ruta = window.name;
+	document.getElementById("div").innerHTML = "<img src='" + ruta + "' width=400 height=400>";
 }

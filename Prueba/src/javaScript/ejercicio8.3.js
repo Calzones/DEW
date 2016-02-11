@@ -1,17 +1,16 @@
-function teclitaArriba(elemento){
-	if(siNoRojo(elemento))
-		document.getElementById(elemento).style.backgroundColor = 'skyblue';
+function seCaduquioNoMasLaGashetitaBuey(){
+	document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 }
-function teclitaAbajo(elemento){
-	if(siNoRojo(elemento))
-		document.getElementById(elemento).style.backgroundColor = 'orchid';
+
+function mainStreet(){
+	
+	alert(document.cookie);
 }
-function dobletecliado(elemento, elemento2){
-	document.getElementById(elemento).style.backgroundColor = 'red'; 
-	document.getElementById(elemento2).style.backgroundColor = 'coral';
-	document.getElementById("textarea").innerHTML = document.getElementById(elemento2).innerHTML;
+
+function hornearGashetita(){
+	document.cookie="username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
 }
-function siNoRojo(elemento){
-	if(document.getElementById(elemento).style.backgroundColor != 'red')
-		return true;
+
+function dameUnarGashetita(){
+	
 }
