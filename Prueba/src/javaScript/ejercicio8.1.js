@@ -7,19 +7,19 @@ function cambairColor (){
 	if((rojo < 256 && rojo > -1) && (verde < 256 && verde > -1) && (azul < 256 && azul > -1)){
 		switch(propiedad){
 			case "bgColor":
-				document.body.bgColor="#" + rgbToHex(rojo,verde,azul);
+				opener.document.body.bgColor="#" + rgbToHex(rojo,verde,azul);
 				break;
 			case "fgColor":
-				document.body.fgColor="#" + rgbToHex(rojo,verde,azul);
+				opener.document.body.fgColor="#" + rgbToHex(rojo,verde,azul);
 				break;
 			case "LinkColor":
-				document.body.LinkColor="#" + rgbToHex(rojo,verde,azul);
+				opener.document.body.LinkColor="#" + rgbToHex(rojo,verde,azul);
 				break;
 			case "aLinkColor":
-				document.body.aLinkColor="#" + rgbToHex(rojo,verde,azul);
+				opener.document.body.aLinkColor="#" + rgbToHex(rojo,verde,azul);
 				break;
 			case "vLinkColor":
-				document.body.vLinkColor="#" + rgbToHex(rojo,verde,azul);
+				opener.document.body.vLinkColor="#" + rgbToHex(rojo,verde,azul);
 				break;
 		}
 	}else{
