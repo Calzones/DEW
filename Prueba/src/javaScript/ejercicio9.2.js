@@ -1,30 +1,29 @@
-function eliminar(){
-	document.cookie = "Contador=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	location.reload();
+function Articulo(cod,desc) { 
+	
+	this.Codigo = cod; 
+	this.Descripcion = desc;
 }
 
-function crear(){
-	document.cookie="Contador=0";
-	document.getElementById("aqui").innerHTML = "Se ha creado una galletita";
+function inventarioDeArticulos(){
+	
+	var laCosa = new Array();
+	
+	laCosa[0] = new Articulo("0001", "La cara de una moneda");
+	laCosa[1]  = new Articulo("0002", "La cruz de una moneda");
+	laCosa[2]  = new Articulo("0003", "Una imagen");
+	laCosa[3]  = new Articulo("0004", "Un GIF");
+	
+	return laCosa;
 }
 
-function mostrar(){
-	if(document.cookie != ""){
-		document.getElementById("aqui").innerHTML = document.cookie;
-	}else{
-		document.getElementById("aqui").innerHTML = "No hay ninguna galleta actualmente";
+function prueba(){
+	
+	var laCosa = inventarioDeArticulos();
+	var cadena = "";
+	
+	for (i = 0; i < 4; i ++){
+		cadena += laCosa[i].Codigo + " " + laCosa[i].Descripcion + "\n";
 	}
-}
 
-function primero(){
-	if(document.cookie == ""){
-		document.getElementById("aqui").innerHTML = "Bienvenido a la página de las cookies";
-	}else{
-		var galleta = document.cookie;
-		var galletita = galleta.split("=");
-		var contador = parseInt(galletita[1]);
-		contador++;
-		document.cookie="Contador="+contador;
-		document.getElementById("aqui").innerHTML = document.cookie;
-	}
+	document.getElementById("texto").value = cadena;												
 }
