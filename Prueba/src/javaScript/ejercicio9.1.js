@@ -23,11 +23,10 @@ function inventarioDeArticulos(){
 }
 
 function prueba(){
-	
 	var laCosa = inventarioDeArticulos();
 	var cadena = "<table><th>Código</th><th>Descripción</th><th>Precio</th><th>Cantidad</th><th>Imagen</th>";
 	
-	for (i = 0; i < 7; s){
+	for (i = 0; i < 7; i ++){
 		cadena += "<tr>" + 
 					"<td>" + laCosa[i].Codigo + "</td>" + 
 					"<td>" + laCosa[i].Descripcion + "</td>" +
@@ -44,7 +43,6 @@ function prueba(){
 function pedidear(){
 	
 	var laWea = "";
-	var alberto = 0;
 	for (i = 0; i < 7; i ++){
 		laWea += document.getElementById(i).value + "+";
 
@@ -59,16 +57,16 @@ function pedidear(){
 function mostrar(){
 	
 	var laCosa = inventarioDeArticulos();
-	var producto = document.cookie.substring(7).split("+");
+	var cantidad = document.cookie.substring(7).split("+");
 	
 	var cadena = "<table><th>Cantidad</th><th>Descripción</th><th>Precio</th><th>Subtotal</th>";
 	var total = 0;
 	var subtotal = 0;
 	for (i = 0; i < 7; i ++){
-		if(producto[i] > 0){
-			subtotal = parseInt(producto[i]) * laCosa[i].Precio;
+		if(cantidad[i] > 0){
+			subtotal = parseInt(cantidad[i]) * laCosa[i].Precio;
 			cadena += "<tr>" + 
-							"<td>" + producto[i] + " uds</td>" + 
+							"<td>" + cantidad[i] + " uds</td>" + 
 							"<td>" + laCosa[i].Descripcion + "</td>" +
 							"<td> a " + laCosa[i].Precio + "</td>" +
 							"<td>" + subtotal + "</td>" +
