@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="../src/css/estilo10.2.css" />
+		<link rel="stylesheet" href="../src/css/stilo.css" />
 		<script type="text/javascript" src="../src/javaScript/ejercicio10.2.js"></script>
 	</head>
 	<body class="fondoPagina" onload="primero();">
@@ -11,11 +11,16 @@
 		</header>
 		<main>
 		<section>
-			<p class="marquee">
-				Windows 8 
+			<p class="marquee" id="texto">
+				¡Queremos que compre!
 			</p>
 			<br>
 			<br>
+			<ul>
+				<li onmouseover="cambiar('Este producto es el mejor de la línea');">Producto A</li>
+				<li onmouseover="cambiar('Este producto es de la mejor calidad');">Producto B</li>
+				<li onmouseover="cambiar('Este producto es barato, barato, barato');">Producto C</li>
+			</ul>
 		</section>
 		<form action="unidad10.html">
 			<button><-</button>

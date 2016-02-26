@@ -1,5 +1,3 @@
-$(".toggle").on("click", function () {
-    $(".marquee").toggleClass("microsoft");
-});
-
-
+function cambiar(texto){
+	document.getElementById("texto").innerHTML = texto;
+}	
