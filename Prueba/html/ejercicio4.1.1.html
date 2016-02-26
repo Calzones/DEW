@@ -13,10 +13,11 @@
 				<section>
 					Introduzca una palabra<br>
 					<input type="password" id="aAdivinar" onfocusout="jugar();"/><br><br>
-					<input type="text" id="enAdivine"/><br><br>
+					<input type="text" id="enAdivine" readonly/><br><br>
+					<input type="hidden" id="LaPuraMagiaNoMasBuey" value=""/>
 					<script></script>
-					intenta adivinarla <input type="text" id="divinar" maxlength="1"/><br><br>
-					<button onclick="validar();">Reiniciar</button>
+					Intenta adivinarla <input type="text" id="divinar" maxlength="1" onkeypress="comprobar();"/><br><br>
+					<button onclick="reiniciar();">Reiniciar</button>
 				</section>
 				<form action="unidad4.html">
 					<button><-</button>

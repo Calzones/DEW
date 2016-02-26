@@ -218,6 +218,6 @@ function dondeSeObraLoInObrable(){
 	return valor;
 }
 
-function blanqueador(){
+function blanqueador(anal){
 	mostra("");
 }

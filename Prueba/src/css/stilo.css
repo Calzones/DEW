@@ -6,7 +6,6 @@ body{
 	margin: 0 8px;
 	background-color:#C97CED	; 
 	color:#C9ED58;
-	
 }
 
 a:link {text-decoration:none; color: #99CC66;}
@@ -27,7 +26,6 @@ section{
 	width: 50%;
 	margin-top: 50px;
 	margin-left: 125px;
-	
 }
 
 main{ 
@@ -40,4 +38,8 @@ button{
 
 footer{
 	float: right;
+}
+
+table, th, td{
+	border:1px dotted;
 }
