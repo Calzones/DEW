@@ -5,14 +5,17 @@
 		<link rel="stylesheet" href="../src/css/stilo.css"/>
 		<script type="text/javascript" src="../src/javaScript/ejercicio10.3.js"></script>
 	</head>
-	<body class="fondoPagina" onload="primero();">
+	<body class="fondoPagina" onload="iniciarCanvas();">
 		<header>
 			<h3>Ejercicio 3</h3>
 		</header>
 			<main>
 				<section>
 					<div>
-						<p id="aqui"><img class="marquee1" id="foto" style="width:75px; height:75px;" src="../src/img/imagen2.jpg"></p>						
+						Css:<p id="aqui"><img class="marquee1" id="foto" style="width:75px; height:75px;" src="../src/img/imagen2.jpg"></p>	
+						<div class="subdiv">
+							Canvas:<canvas id="canvas" width="300" height="200">No va el canvas</canvas>
+						</div>			
 						<button onclick="mover();">Mover imagen</button>
 						<button onclick="situar();">Situar imagen</button>
 					</div>

@@ -1,30 +1,21 @@
-function eliminar(){
-	document.cookie = "Contador=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	location.reload();
-}
-
-function crear(){
-	document.cookie="Contador=0";
-	document.getElementById("aqui").innerHTML = "Se ha creado una galletita";
-}
-
-function mostrar(){
-	if(document.cookie != ""){
-		document.getElementById("aqui").innerHTML = document.cookie;
-	}else{
-		document.getElementById("aqui").innerHTML = "No hay ninguna galleta actualmente";
+function cocinar(){
+	
+	
+	var ingrediente = document.getElementsByName("ingrediente");
+	var ing = "<b>Ingredientes:</b><br>";
+	for (i = 0; i < ingrediente.length; i++) {
+		if (ingrediente[i].checked){
+			ing += ingrediente[i].value + "<br>";
+		}
 	}
-}
-
-function primero(){
-	if(document.cookie == ""){
-		document.getElementById("aqui").innerHTML = "Bienvenido a la página de las cookies";
-	}else{
-		var galleta = document.cookie;
-		var galletita = galleta.split("=");
-		var contador = parseInt(galletita[1]);
-		contador++;
-		document.cookie="Contador="+contador;
-		document.getElementById("aqui").innerHTML = document.cookie;
+	var masa = document.getElementsByName("masa");
+	var mas = "<br><b>Masa:</b><br>";
+	for (i = 0; i < masa.length; i++) {
+		if (masa[i].checked){
+			mas += masa[i].value + "<br>";
+		}
 	}
+	
+	var pizza = ing + mas;
+	document.getElementById("aqui").innerHTML = pizza;
 }
